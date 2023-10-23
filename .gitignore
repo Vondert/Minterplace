@@ -1,0 +1,8 @@
+
+minterplace_program/.anchor
+minterplace_program/.DS_Store
+minterplace_program/target
+minterplace_program/**/*.rs.bk
+minterplace_program/node_modules
+minterplace_program/test-ledger
+minterplace_program/.yarn
