@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@600&display=swap');
+
+.body{
+    display: flex;
+    transform: scale(0.85); 
+    transform-origin: center; 
+    justify-content: center;
+}
+.bigLabel{
+    font-size: 40px;
+    color: white;
+    font-family: 'Epilogue';
+    font-weight: 600;
+    margin-bottom: 40px;
+    display: block;
+}
+.smallLabel{
+    font-size: 16px;
+    color: white;
+    font-family: 'Epilogue';
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+.input{
+    display: block;
+    width: 838px;
+    height: 31px;
+    margin-bottom: 20px;
+    background-color: #222222;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    border-radius: 7px;
+    font-size: 16px;
+    color:#FFFFFF;
+    font-family: 'Epilogue';
+    font-weight: 400;
+    caret-color: white;
+}
+input::placeholder{
+    font-size: 16px;
+    color:#ADADAD;
+    font-family: 'Epilogue';
+    font-weight: 400;
+}
+.modularInput{
+    width: 388px;
+    height: 35px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #222222;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    border-radius: 7px;
+    font-size: 16px;
+    color:#FFFFFF;
+    font-family: 'Epilogue';
+    font-weight: 400;
+    caret-color: white;
+}
+.modularInput::placeholder{
+    font-size: 16px;
+    color:#ADADAD;
+    font-family: 'Epilogue';
+    font-weight: 400;
+}
+.remove{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.add{
+    justify-content: flex-end;
+    font-size: 16px;
+    font-family: 'Epilogue';
+    font-weight: 500;
+    background-color: transparent;
+    border-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.createPreview{
+    height: 50px;
+    width: 200px;
+    background-color: transparent;
+    color:white;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 7px;
+    border: 1px solid #C264B2;
+    cursor: pointer;
+}
+.createPreview:hover{
+    background-color: #C264B2;
+}
+.mint{
+    height: 50px;
+    width: 139px;
+    background-color: #C264B2;
+    color:white;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    margin-left: 20px;
+}
+.verticalLine{
+    width: 1px;
+    height: auto;
+    background-color: #222222;
+    margin-right: 75px;
+    margin-left: 75px;
+}
+

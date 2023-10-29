@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
+
+.header{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 120px;
+    margin-right: 120px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.walletButtonDiv{
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.headerButtonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Epilogue';
+}
+.footerButtonDiv{
+    display: flex;
+    background-color:black;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Epilogue';
+    height: 100px;
+}
+.footerButton{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-color: transparent;
+    color: #BBBABB;
+    outline: none;
+}
+.button{
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: transparent;
+    border-color: transparent;
+    border: none;
+    color: #BBBABB;
+    cursor: pointer;
+    outline: none;
+}
+.button:hover{
+    color: white;
+}
+.logoDiv{
+    flex: 0.45;
+    display: flex;
+    align-items: center;
+}
+.logoImg{
+    height: 20px;
+    cursor: pointer;
+}
+.line{
+    margin-left: 120px;
+    margin-right: 120px;
+    height: 1px;
+    background-color:#222222
+}

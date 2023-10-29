@@ -1,4 +1,4 @@
-use anchor_lang::prelude::*;
+use anchor_lang::prelude::{*};
 use anchor_spl::{
     associated_token::AssociatedToken,
     metadata::{
@@ -8,7 +8,7 @@ use anchor_spl::{
     token::{mint_to, Mint, MintTo, Token, TokenAccount},
 };
 use mpl_token_metadata::{
-    types::DataV2, 
+    types::{DataV2, Creator}, 
     accounts::Metadata as MetaplexMetadata, 
     accounts::MasterEdition
 };
@@ -16,11 +16,10 @@ declare_id!("DzgHfmRkctH9W7d65vgxNPra2UqjWACBGZY1kFPMRy13");
 
 #[program]
 pub mod minterplace_program {
-
     use super::*;
 
-    pub fn mint_nft(ctx: Context<MintNFT>, name: String, symbol: String, uri: String) -> Result<()> {
-
+    pub fn mint_nft(ctx: Context<MintNFT>, name: String, symbol: String, uri: String, seller_fee_basis_points: u16) -> Result<()> {
+        //Creating mint context
         let mint_context = CpiContext::new(
             ctx.accounts.token_program.to_account_info(),
             MintTo {
@@ -29,8 +28,10 @@ pub mod minterplace_program {
                 authority: ctx.accounts.signer.to_account_info(),
             },
         );
+        //Token program cpi for mint
         mint_to(mint_context, 1)?;
-
+        
+        //Creating metadata context
         let metadata_context = CpiContext::new(
             ctx.accounts.token_metadata_program.to_account_info(),
             CreateMetadataAccountsV3 {
@@ -43,18 +44,19 @@ pub mod minterplace_program {
                 rent: ctx.accounts.rent.to_account_info(),
             },
         );
-
+        //Creating data struct
         let data = DataV2 {
             name,
             symbol,
             uri,
-            seller_fee_basis_points: 0,
-            creators: None,
+            seller_fee_basis_points,
+            creators: Some(vec![Creator{address: ctx.accounts.signer.key(), verified: true, share: 100}]),
             collection: None,
             uses: None,
         };
+        //Token metadata program cpi for initializing metadata account
         create_metadata_accounts_v3(metadata_context, data, false, true, None)?;
-
+        //Creating master context
         let master_context = CpiContext::new(
             ctx.accounts.token_metadata_program.to_account_info(),
             CreateMasterEditionV3 {
@@ -69,7 +71,7 @@ pub mod minterplace_program {
                 rent: ctx.accounts.rent.to_account_info(),
             },
         );
-
+        //Token metadata program cpi for initializing master edition account
         create_master_edition_v3(master_context, None)?;
         Ok(())
     }

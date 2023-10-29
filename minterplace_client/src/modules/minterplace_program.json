@@ -1,0 +1,88 @@
+{
+  "version": "0.1.0",
+  "name": "minterplace_program",
+  "instructions": [
+    {
+      "name": "mintNft",
+      "accounts": [
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "mint",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "signerAta",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "metadata",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "CHECK - address"
+          ]
+        },
+        {
+          "name": "masterEdition",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "CHECK - address"
+          ]
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMetadataProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        },
+        {
+          "name": "sellerFeeBasisPoints",
+          "type": "u16"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "address": "DzgHfmRkctH9W7d65vgxNPra2UqjWACBGZY1kFPMRy13"
+  }
+}
