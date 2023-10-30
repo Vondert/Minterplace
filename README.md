@@ -4,17 +4,17 @@ Minterplace consists of two parts: a website and a program on the Solana blockch
 This project simplifies the NFT mining process and brings the world of NFTs to the masses.
 
 Features:
-- Mint NFT with with metadata.
+- Mint NFT with metadata.
 - Metaplex token standard using.
 - Arweave storage for storing metadata.
 - Phantom wallet integration: use your phantom wallet to mint NFTs to it.
 - View NFTs stored on your wallet (with further viewing on Solana Explorer).
 
-Thecnologies used:
+Thechnologies used:
  - On-Chain:
    - Solana blockhain: handling transactions;
    - Anchor framework: simplyfies smart contracts developing; 
-   - Solana token programm: tokens creating;
+   - Solana token program: tokens creating;
    - Solana associated token program: associated token accounts creating;
    - Metaplex token metadata program: adding metadata to tokens.
  - Off-Chain:
@@ -31,7 +31,7 @@ You can try Minterplace just now! The DApp is available at this link:
 If you want to setup project locally, then follow steps from Installation module.
 
 Installation:
- Prerequisites: Node.js, Phantom Wallet. 
+ - Prerequisites: Node.js, Phantom Wallet. 
  1. Clone the repository:
     - git clone https://github.com/Vondert/Minterplace.git
  2. Navigate to the project directory:
@@ -43,23 +43,23 @@ Installation:
  5. Run local server:
     - npm run dev
  
- Now using http://localhost:5173 link you can interact with your local version of Minterplace website, but it interacts with the same contract that interacts main version. The last thing you need to do is connect your Phantom wallet and enjoy NFT minting experience.
+ Now using http://localhost:5173 link you can interact with your local version of Minterplace website, but it interacts with the same contract that interacts main version. The last thing you need to do is to connect your Phantom wallet and enjoy NFT minting experience.
 
  Testing smart contract:
- - Attention: in test all values and metadata are hardcoded, if you want to provide metadata use website or local client version.
- -Prerequisites: Anchor (coral-xyz), Solana cli, Local keypair with SOLs in devnet.
- - If you want manually deploy your version of smart contract and test it follow next steps:
+ - Attention: in the test all values and metadata are hardcoded, if you want to provide metadata use website or local client version.
+ - Prerequisites: Anchor (coral-xyz), Solana cli, Local keypair with SOLs in devnet.
+ - If you want manually to deploy your version of smart contract and test it, follow next steps:
  1. Move to progarm directory:
     - cd competition/minterplace_program
  2. Change wallet pass in Anchor.toml to your local keypair file:
     - ![image](https://github.com/Vondert/Minterplace/assets/95308300/e89d2273-4919-4db8-a9b0-0bbb935b154a)
  3.Set solana config to devnet:
     - solana config set devnet
- 4. Build program:
+ 4. Build a program:
     - anchor build
- 5. Deploy program and copy program address from cli after deploying:
+ 5. Deploy a program and copy program address from cli after deploying:
     - anchor deploy
- 6. Change program addres for new in lib.rs and Anchor.Toml.
+ 6. Change program address for new in lib.rs and Anchor.Toml.
     ![image](https://github.com/Vondert/Minterplace/assets/95308300/a8f7992c-9b0f-4830-b974-5f4d4e501fce)
     ![image](https://github.com/Vondert/Minterplace/assets/95308300/a9b25060-e12f-4cd5-8f2a-d87f648f52e4)
  7. Repeat steps 4 and 5.
