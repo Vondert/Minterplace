@@ -10,7 +10,7 @@ Features:
 - Phantom wallet integration: use your phantom wallet to mint NFTs to it.
 - View NFTs stored on your wallet (with further viewing on Solana Explorer).
 
-Thechnologies used:
+Used thechnologies:
  - On-Chain:
    - Solana blockhain: handling transactions;
    - Anchor framework: simplyfies smart contracts developing; 
