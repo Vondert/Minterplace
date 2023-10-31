@@ -34,7 +34,7 @@ const App = () => {
         break;
       case "create":
         if (provider && solanaWallet && program && METAPLEX) {
-          setContent(<CreatingForm provider = {provider} program={program} metaplex={METAPLEX}/>);
+          setContent(<CreatingForm provider = {provider} program={program} metaplex={METAPLEX} handleContentChange={handleContentChange}/>);
           return;
         }
         setContent(<Home/>);
@@ -43,7 +43,7 @@ const App = () => {
         break;
       case "show":
         if (provider && solanaWallet && program && METAPLEX) {
-          setContent(<MyNFTs provider = {provider} program={program} metaplex={METAPLEX}/>);
+          setContent(<MyNFTs provider = {provider} program={program} metaplex={METAPLEX} handleContentChange={handleContentChange}/>);
           return;
         }
         setContent(<Home/>);
@@ -64,22 +64,19 @@ const App = () => {
         <button className={styles.button} onClick={() => handleContentChange("home")}>Home</button>
         <button className={styles.button} onClick={() => handleContentChange("create")}>Create NFT</button>
         <button className={styles.button} onClick={() => handleContentChange("show")}>My NFTs</button>
-        <button className={styles.button}>Button</button>
-        <button className={styles.button}>Button</button>
+        <button className={styles.button}>Market</button>
       </div>
       <div className={styles.walletButtonDiv}>
         <WalletMultiButton/>
       </div>
     </header>
     <div className={styles.line}></div>
-      {provider ? content : <Home />}
-    <footer className={styles.footer}>
-      <div className={styles.footerButtonDiv}>
+      {provider ? content : <Home/>}
+    <footer className={styles.footerButtonDiv}>
         <button className={styles.footerButton}  disabled>©2023. All rights reserved</button>
         <button className={styles.button}>Community guidlines</button>
         <button className={styles.button}>Terms</button>
         <button className={styles.button}>Privacy Policy</button>
-      </div>
     </footer>
   </div>
 );

@@ -46,6 +46,28 @@ input::placeholder{
     font-family: 'Epilogue';
     font-weight: 400;
 }
+.inputR{
+    display: block;
+    width: 836px;
+    height: 29px;
+    margin-bottom: 20px;
+    background-color: #222222;
+    border: 1px solid #ADADAD;
+    outline: none;
+    padding-left: 10px;
+    border-radius: 7px;
+    font-size: 16px;
+    color:#FFFFFF;
+    font-family: 'Epilogue';
+    font-weight: 400;
+    caret-color: white;
+}
+inputR::placeholder{
+    font-size: 16px;
+    color:#ADADAD;
+    font-family: 'Epilogue';
+    font-weight: 400;
+}
 .modularInput{
     width: 388px;
     height: 35px;

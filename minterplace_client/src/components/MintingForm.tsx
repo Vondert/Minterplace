@@ -1,11 +1,11 @@
 //Custom imports
 import { MetadataNFT, createMetaUri } from '../modules/metadata';
-import { FormsProps, getUmi } from "../modules/utils"
+import {FormsProps, getUmi } from "../modules/utils"
 //Solana imports
 import {SystemProgram, SYSVAR_RENT_PUBKEY, Keypair} from '@solana/web3.js'
 import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID, ASSOCIATED_TOKEN_PROGRAM_ID } from '@solana/spl-token';
 //Metaplex imports
-import { findMasterEditionPda, findMetadataPda, MPL_TOKEN_METADATA_PROGRAM_ID } from '@metaplex-foundation/mpl-token-metadata';
+import { findMasterEditionPda, findMetadataPda, MPL_TOKEN_METADATA_PROGRAM_ID} from '@metaplex-foundation/mpl-token-metadata';
 import { publicKey } from '@metaplex-foundation/umi';
 //CSS imports
 import styles from "../assets/styles/CreatingForm.module.css";
@@ -15,8 +15,7 @@ interface MintingForm extends FormsProps{
     meta: MetadataNFT,
 }
 
-const MintingForm: React.FC<MintingForm> = ({provider, program, metaplex, meta}) => {
-
+const MintingForm: React.FC<MintingForm> = ({provider, program, metaplex, meta, handleContentChange}) => {
     //Mint function
     const mintNft = async () =>{
         try{
@@ -50,6 +49,7 @@ const MintingForm: React.FC<MintingForm> = ({provider, program, metaplex, meta})
             console.log(
                 `minted nft: https://explorer.solana.com/address/${mint.publicKey}?cluster=devnet`
             );
+            handleContentChange("show");
         }
         catch (error){
             alert(error);

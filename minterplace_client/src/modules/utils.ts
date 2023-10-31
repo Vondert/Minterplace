@@ -14,7 +14,8 @@ import idl from './minterplace_program.json'
 export interface FormsProps {
     provider: AnchorProvider,
     program: Program,
-    metaplex: Metaplex
+    metaplex: Metaplex,
+    handleContentChange: (type: string) => void
 }
 
 

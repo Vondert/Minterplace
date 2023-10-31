@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@900&display=swap');
 .tokensLabel{
-    font-size: 40px;
+    font-size: 34px;
     color: white;
     font-family: 'Epilogue';
     font-weight: 600;
@@ -9,11 +11,45 @@
     margin-left: 120px;
     display: block;
 }
-.body{
+.cardsBody{
     display: flex;
     flex-wrap: wrap;
     margin-right: 105px;
     margin-left: 105px;
+}
+.messageBody{
+    margin-right: 120px;
+    margin-left: 120px;
+    display: flex;
+    width: calc(100% - 240px); 
+    background-size: cover;
+    background-image: url("/cubes.png");
+    margin-top: -40px;
+}
+.labelsDiv{
+    margin-top: 175px;
+    margin-left: 240px;
+}
+.messageLabel{
+    font-size: 55px;
+    color: white;
+    font-family: 'Epilogue';
+    font-weight: 900;
+    display: flex;
+}
+.smallLabelDiv{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 133px;
+}
+.smallLabel{
+    font-size: 16px;
+    color: #ADADAD;
+    font-family: 'Epilogue';
+    font-weight: 400;
 }
 .card{
     margin-bottom: 33px;
@@ -42,6 +78,8 @@
     font-family: 'Plus Jakarta Sans';
     font-weight: 700;
     margin-top: 20px;
+    width: 247.5px;
+    overflow: hidden;
 }
 .symbolLabel{
     display: block;
@@ -51,6 +89,8 @@
     font-weight: 700;
     margin-top: 10px;
     margin-bottom: 20px;
+    width: 247.5px;
+    overflow: hidden;
 }
 
 .viewButton{
@@ -70,4 +110,21 @@
 }
 .ref{
     display: none;
+}
+.createNFT{
+    height: 50px;
+    width: 200px;
+    background-color: transparent;
+    color:white;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 7px;
+    border: 1px solid #C264B2;
+    cursor: pointer;
+    margin-top: 40px;
+    display: block;
+}
+.createNFT:hover{
+    background-color: #C264B2;
 }

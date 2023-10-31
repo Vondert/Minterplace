@@ -12,7 +12,7 @@ import AttributesForm from '../components/AttributesForm';
 //CSS imports
 import styles from '../assets/styles/CreatingForm.module.css'
 
-const CreatingForm: React.FC<FormsProps> = ({provider, program, metaplex}) => {
+const CreatingForm: React.FC<FormsProps> = ({provider, program, metaplex, handleContentChange}) => {
 
   const [name, setName] = useState<string>("");
   const [symbol, setSymbol] = useState<string>("");
@@ -39,7 +39,6 @@ const CreatingForm: React.FC<FormsProps> = ({provider, program, metaplex}) => {
         attributes,
         creator: provider.wallet.publicKey
       }
-      console.log(metadata);
       setMeta(metadata);
     } else {
       alert("Fill all fields marked with *");
@@ -55,7 +54,7 @@ const CreatingForm: React.FC<FormsProps> = ({provider, program, metaplex}) => {
     <div style={{display: "flex", marginTop: "40px"}}>
         <button className={styles.createPreview} onClick={createMeta}>Create preview</button>
         {meta && (
-          <MintingForm program={program} provider={provider} metaplex={metaplex} meta={meta}/>
+          <MintingForm program={program} provider={provider} metaplex={metaplex} meta={meta} handleContentChange={handleContentChange}/>
         )}
     </div>)
   }, [meta, name, symbol, description, image, attributes]);

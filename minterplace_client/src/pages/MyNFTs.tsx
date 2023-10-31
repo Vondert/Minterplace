@@ -1,13 +1,13 @@
 //React imports
 import { useEffect, useState } from "react"
 //Metaplex imports
-import { PublicKey } from "@metaplex-foundation/js";
+import { PublicKey} from "@metaplex-foundation/js";
 //Custom imports
 import { FormsProps } from "../modules/utils"
 //CSS imports
 import styles from "../assets/styles/MyNFTs.module.css"
 
-const MyNFTs: React.FC<FormsProps> = ({provider, metaplex}) =>{
+const MyNFTs: React.FC<FormsProps> = ({provider, metaplex, handleContentChange}) =>{
     const [tokens, setTokens] = useState([]);
 
     //Fetching tokens by owner
@@ -19,7 +19,6 @@ const MyNFTs: React.FC<FormsProps> = ({provider, metaplex}) =>{
                 const t = await metaplex.nfts().findAllByOwner({
                     owner: metaplex.identity().publicKey,
                 });
-                console.log(t);
                 const loadImages = async () => {
                     const tokenData = [];
                     for (const nft of t){
@@ -48,9 +47,10 @@ const MyNFTs: React.FC<FormsProps> = ({provider, metaplex}) =>{
     };
 
     return(
-        <div style={{marginTop: "100px", marginBottom: "67px"}}>
+        <div style={{marginTop: "85px", marginBottom: "67px"}}>
             <label className={styles.tokensLabel}>My tokens</label>
-            <div className={styles.body}>
+            {tokens.length > 0 ? (
+            <div className={styles.cardsBody}>
             {tokens.map(nft => (
                 //@ts-ignore
                 <div className={styles.card} key={/*@ts-ignore*/nft.address.toBase58()}>
@@ -61,6 +61,19 @@ const MyNFTs: React.FC<FormsProps> = ({provider, metaplex}) =>{
                 </div>
             ))}
             </div>
+            ) : (
+                <div className={styles.messageBody}>
+                    <div className={styles.labelsDiv}>
+                        <label className={styles.messageLabel}>There are currently no NFTs</label>
+                        <label style={{justifyContent: "flex-end"}} className={styles.messageLabel}>in your wallet</label>
+                        <div className={styles.smallLabelDiv}>
+                            <label className={styles.smallLabel}>You can create them right now</label>
+                            <button className={styles.createNFT} onClick={() => handleContentChange("create")}>Create NFT</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            )}
         </div>
         
     )

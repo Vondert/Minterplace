@@ -32,10 +32,14 @@
     color: white;
     font-family: 'Plus Jakarta Sans';
     font-weight: 700;
+    width: 370px;
+    overflow: hidden;
 }
 .symbolLabel{
     display: block;
     font-size: 18px;
+    width: 370px;
+    overflow: hidden;
     color: #ADADAD;
     font-family: 'Plus Jakarta Sans';
     font-weight: 700;

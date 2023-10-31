@@ -6,6 +6,8 @@ minterplace_program/**/*.rs.bk
 minterplace_program/node_modules
 minterplace_program/test-ledger
 minterplace_program/.yarn
+minterplace_client/package-lock.json
+minterplace_client/yarn.lock
 
 minterplace_client/logs
 minterplace_client/*.log

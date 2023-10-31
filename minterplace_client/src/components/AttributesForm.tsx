@@ -42,9 +42,12 @@ const AttributesForm: React.FC<AttributesForm> = ({setAttributes}) =>{
   //Handle attributes fields changing
   const handleAttributesChange = (e: React.ChangeEvent<HTMLInputElement>, index: number, fieldName: string) => {
     const { value } = e.target;
-    const updatedAttributes = [...currentAttributes];
-    updatedAttributes[index] = { ...updatedAttributes[index], [fieldName]: value };
-    setCurrentAttributes(updatedAttributes);
+    const allowedCharacters = /^[a-zA-Z0-9№#$\s]*$/;
+    if (allowedCharacters.test(value)) {
+      const updatedAttributes = [...currentAttributes];
+      updatedAttributes[index] = { ...updatedAttributes[index], [fieldName]: value };
+      setCurrentAttributes(updatedAttributes);
+    }
   };
 
   useEffect(() => {

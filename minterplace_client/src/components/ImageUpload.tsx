@@ -26,7 +26,7 @@ const ImageUpload: React.FC<ImageUpload> = ({handleImageSelect}) =>{
       };
     return(
     <div>
-      <label className={styles.bigLabel}>Upload artwork</label>
+      <label className={styles.bigLabel}>Upload artwork*</label>
       {!imageUrl ? (
         <div className={styles.imageUpload}>
           <input type="file" id="upload-input" accept="image/*" onChange={handleFileChange} style={{ display: 'none' }}/>
