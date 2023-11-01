@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
 
 .header{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    height: 70px;
+    padding-top: 30px;
+    background-color: black;
+}
+.headerContainer{
     margin-left: 120px;
     margin-right: 120px;
     display: flex;
@@ -31,14 +34,6 @@
     font-family: 'Epilogue';
     height: 100px;
     bottom: 0;
-}
-.footerButton{
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: transparent;
-    border-color: transparent;
-    color: #BBBABB;
-    outline: none;
 }
 .button{
     margin-left: 20px;

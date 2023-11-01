@@ -57,23 +57,23 @@ const App = () => {
   return (
   <div>
     <header className={styles.header}>
-      <div className={styles.logoDiv}>
-        <img className={styles.logoImg} src="/logo.svg" onClick={() => handleContentChange("home")}/>
-      </div>
-      <div className={styles.headerButtonDiv}>
-        <button className={styles.button} onClick={() => handleContentChange("home")}>Home</button>
-        <button className={styles.button} onClick={() => handleContentChange("create")}>Create NFT</button>
-        <button className={styles.button} onClick={() => handleContentChange("show")}>My NFTs</button>
-        <button className={styles.button}>Market</button>
-      </div>
-      <div className={styles.walletButtonDiv}>
-        <WalletMultiButton/>
+      <div className={styles.headerContainer}>
+        <div className={styles.logoDiv}>
+          <img className={styles.logoImg} src="/logo.svg" onClick={() => handleContentChange("home")}/>
+        </div>
+        <div className={styles.headerButtonDiv}>
+          <button className={styles.button} onClick={() => handleContentChange("home")}>Home</button>
+          <button className={styles.button} onClick={() => handleContentChange("create")}>Create NFT</button>
+          <button className={styles.button} onClick={() => handleContentChange("show")}>My NFTs</button>
+          <button className={styles.button} onClick={() => alert("In development!")}>Market</button>
+        </div>
+        <div className={styles.walletButtonDiv}>
+          <WalletMultiButton/>
+        </div>
       </div>
     </header>
-    <div className={styles.line}></div>
-      {provider ? content : <Home/>}
+    {content}
     <footer className={styles.footerButtonDiv}>
-        <button className={styles.footerButton}  disabled>©2023. All rights reserved</button>
         <button className={styles.button}>Community guidlines</button>
         <button className={styles.button}>Terms</button>
         <button className={styles.button}>Privacy Policy</button>

@@ -15,7 +15,7 @@
 }
 .formatLabel{
   font-size: 16px;
-  color: #ADADAD;
+  color: #555555;
   font-family: 'Epilogue';
   font-weight: 400;
   margin-top: 20px;
@@ -27,7 +27,7 @@
     border-radius: 7px;
     border-width: 1px;
     border: solid;
-    border-color: #ADADAD;
+    border-color: #555555;
     align-items: center;
     justify-content: center;
     height: 300px;
@@ -40,7 +40,7 @@
   border-radius: 7px;
   border-width: 1px;
   border: solid;
-  border-color: #ADADAD;
+  border-color: #555555;
   align-items: center;
   height: 100px;
   margin-top: 40px;

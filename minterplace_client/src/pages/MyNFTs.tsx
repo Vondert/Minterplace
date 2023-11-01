@@ -22,11 +22,19 @@ const MyNFTs: React.FC<FormsProps> = ({provider, metaplex, handleContentChange})
                 const loadImages = async () => {
                     const tokenData = [];
                     for (const nft of t){
-                        const metadata = await (await fetch(nft.uri as string)).json();
-                        tokenData.push({
-                            ...nft,
-                            image: metadata.image,
-                        });
+                        if (nft.uri == ""){
+                            tokenData.push({
+                                ...nft,
+                                image: "",
+                            });
+                        }
+                        else{
+                            const metadata = await (await fetch(nft.uri as string)).json();
+                            tokenData.push({
+                                ...nft,
+                                image: metadata.image,
+                            });
+                        }
                         //@ts-ignore
                         setTokens(tokenData);
                     }
@@ -54,7 +62,10 @@ const MyNFTs: React.FC<FormsProps> = ({provider, metaplex, handleContentChange})
             {tokens.map(nft => (
                 //@ts-ignore
                 <div className={styles.card} key={/*@ts-ignore*/nft.address.toBase58()}>
-                    <img className={styles.img} src= {/*@ts-ignore*/nft.image as string}/>
+                    {nft.image != "" ? ( <img className={styles.img} src= {/*@ts-ignore*/nft.image as string}/>)
+                    : (<div className={styles.emptyImg}>
+                        <img className={styles.imgEye} src="/card.svg" alt="" />
+                    </div>)/*@ts-ignore*/}
                     <label className={styles.nameLabel}>{/*@ts-ignore*/nft.name as string}</label>
                     <label className={styles.symbolLabel}>{/*@ts-ignore*/nft.symbol as string}</label>
                     <button className={styles.viewButton} onClick={() => {openExplorer(nft.mintAddress)}}>View on Explorer</button>
@@ -70,7 +81,6 @@ const MyNFTs: React.FC<FormsProps> = ({provider, metaplex, handleContentChange})
                             <label className={styles.smallLabel}>You can create them right now</label>
                             <button className={styles.createNFT} onClick={() => handleContentChange("create")}>Create NFT</button>
                         </div>
-                        
                     </div>
                 </div>
             )}

@@ -22,7 +22,8 @@
     margin-left: 120px;
     display: flex;
     width: calc(100% - 240px); 
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-image: url("/cubes.png");
     margin-top: -40px;
 }
@@ -47,7 +48,7 @@
 }
 .smallLabel{
     font-size: 16px;
-    color: #ADADAD;
+    color: #555555;
     font-family: 'Epilogue';
     font-weight: 400;
 }
@@ -71,6 +72,18 @@
     width: 247.5px;
     height: 247.5px;
 }
+.emptyImg{
+    width: 245.5px;
+    height: 245.5px;
+    border: 1px solid #555555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgEye{
+    width: 86px;
+    height: 52px;
+}
 .nameLabel{
     display: block;
     font-size: 16px;
@@ -84,7 +97,7 @@
 .symbolLabel{
     display: block;
     font-size: 16px;
-    color: #ADADAD;
+    color: #555555;
     font-family: 'Plus Jakarta Sans';
     font-weight: 700;
     margin-top: 10px;

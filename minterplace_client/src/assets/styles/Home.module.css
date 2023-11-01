@@ -4,6 +4,7 @@
     width: calc(100% - 240px); 
     background-size: cover;
     background-image: url("/home.png");
+    margin-top: 100px
 }
 
 .img {

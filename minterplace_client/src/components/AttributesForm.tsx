@@ -87,7 +87,7 @@ const AttributesForm: React.FC<AttributesForm> = ({setAttributes}) =>{
           </div>
         ))}
         <div style={{ textAlign: "right"}}>
-          <button className={styles.add} onClick={addAttribute}>+ Add attribute</button>
+          <button className={styles.add} onClick={addAttribute}>+ Add an attribute</button>
         </div>
       </div>
     )
