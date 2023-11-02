@@ -20,26 +20,33 @@ const MyNFTs: React.FC<FormsProps> = ({provider, metaplex, handleContentChange})
                     owner: metaplex.identity().publicKey,
                 });
                 const loadImages = async () => {
-                    const tokenData = [];
                     for (const nft of t){
                         if (nft.uri == ""){
                             tokenData.push({
-                                ...nft,
+                                name: nft.name,
+                                symbol: nft.symbol,
+                                address: nft.address,
+                                //@ts-ignore
+                                mintAddress: nft.mintAddress,
                                 image: "",
                             });
                         }
                         else{
                             const metadata = await (await fetch(nft.uri as string)).json();
                             tokenData.push({
-                                ...nft,
+                                name: nft.name,
+                                symbol: nft.symbol,
+                                address: nft.address,
+                                //@ts-ignore
+                                mintAddress: nft.mintAddress,
                                 image: metadata.image,
                             });
                         }
-                        //@ts-ignore
-                        setTokens(tokenData);
+                         //@ts-ignore
+                        setTokens(() => [...tokenData]);
                     }
                 }
-                loadImages();
+                await loadImages();
             } catch (error) {
                 console.error("Ошибка при загрузке данных:", error);
             }

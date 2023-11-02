@@ -14,6 +14,7 @@ export interface MetadataNFT{
 //Uploading image to arweave 
 const createImageUri = async (metaplex: Metaplex, image: File) => {
     const imgMetaplexFile = await toMetaplexFileFromBrowser(image);
+    console.log(imgMetaplexFile);
     const imgUri = await metaplex.storage().upload(imgMetaplexFile);
     return imgUri;
 }

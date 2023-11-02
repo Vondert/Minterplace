@@ -1,6 +1,5 @@
 //React imports
 import {useEffect, useMemo, useState} from 'react'
-import {screen, fireEvent } from '@testing-library/react';
 //CSS imports
 import styles from '../assets/styles/App.module.css'
 import '../assets/styles/walletButton.css';
@@ -27,7 +26,7 @@ const App = () => {
   
   //Navigation function
   const handleContentChange = (type: string) => {
-    let walletButton;
+    const walletButton = document.querySelector("button.wallet-adapter-button.wallet-adapter-button-trigger") as HTMLButtonElement;;
     switch (type){
       case "home":
         setContent(<Home/>);
@@ -38,8 +37,7 @@ const App = () => {
           return;
         }
         setContent(<Home/>);
-        walletButton = screen.getByText('Select Wallet');
-        fireEvent.click(walletButton);
+        walletButton.click();
         break;
       case "show":
         if (provider && solanaWallet && program && METAPLEX) {
@@ -47,8 +45,7 @@ const App = () => {
           return;
         }
         setContent(<Home/>);
-        walletButton = screen.getByText('Select Wallet');
-        fireEvent.click(walletButton);
+        walletButton.click();
         break;
     }
   }

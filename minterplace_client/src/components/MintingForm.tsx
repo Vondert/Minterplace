@@ -29,6 +29,7 @@ const MintingForm: React.FC<MintingForm> = ({provider, program, metaplex, meta, 
             const masterEditionAccount = findMasterEditionPda(umi, {mint: publicKey(mint.publicKey)})[0];
             //Metadata
             const uri = await createMetaUri(metaplex, meta);
+
             const metadata = {name: meta.name, symbol: meta.symbol, uri: uri};
             //Sending transaction
             const tx = await program.methods.mintNft(metadata.name, metadata.symbol, metadata.uri, 200).accounts({
@@ -52,7 +53,7 @@ const MintingForm: React.FC<MintingForm> = ({provider, program, metaplex, meta, 
             handleContentChange("show");
         }
         catch (error){
-            alert(error);
+            console.log(error);
         }
     }
     return(

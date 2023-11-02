@@ -21,7 +21,6 @@ minterplace_client/pnpm-debug.log*
 minterplace_client/lerna-debug.log*
 
 minterplace_client/node_modules
-minterplace_client/dist
 minterplace_client/dist-ssr
 minterplace_client/*.local
 
