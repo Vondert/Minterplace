@@ -8,6 +8,18 @@ export default defineConfig(() => {
     plugins: [
     react(),
     nodePolyfills(),
-    ]
+    ],
+    build: {
+      target: "es2020",
+      rollupOptions: {
+          plugins: [ react(),
+            nodePolyfills(),],
+      },
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+          target: "es2020"
+      }
+    }
   }
 })
