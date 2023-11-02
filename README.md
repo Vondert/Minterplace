@@ -1,6 +1,6 @@
 # Minterplace - README
 Welcome to Minterplace repository! This DApp uses Solana blockchain and Metaplex token standard for minting NFTs. 
-Minterplace consists of two parts: a website and a program on the Solana blockchain with which the website interacts.
+Minterplace consists of two parts: a UI part and a program on the Solana blockchain with which the UI interacts.
 This project simplifies the NFT mining process and brings the world of NFTs to the masses.
 
 Features:
@@ -27,7 +27,6 @@ Used thechnologies:
    - Solana SPL token library: creating tokens.
 
 Using:
-You can try Minterplace just now! The DApp is available at this link: 
 If you want to setup project locally, then follow steps from Installation module.
 
 Installation:
@@ -43,10 +42,10 @@ Installation:
  5. Run local server:
     - npm run dev
  
- Now using http://localhost:5173 link you can interact with your local version of Minterplace website, but it interacts with the same contract that interacts main version. The last thing you need to do is to connect your Phantom wallet and enjoy NFT minting experience.
+ Now using http://localhost:5173 link you can interact with your local version of Minterplace website. The last thing you need to do is to connect your Phantom wallet and enjoy NFT minting experience.
 
  Testing smart contract:
- - Attention: in the test all values and metadata are hardcoded, if you want to provide metadata use website or local client version.
+ - Attention: in the test all values and metadata are hardcoded, if you want to provide metadata use UI part.
  - Prerequisites: Anchor (coral-xyz), Solana cli, Local keypair with SOLs in devnet.
  - If you want manually to deploy your version of smart contract and test it, follow next steps:
  1. Move to progarm directory:
