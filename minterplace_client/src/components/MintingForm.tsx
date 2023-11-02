@@ -53,7 +53,7 @@ const MintingForm: React.FC<MintingForm> = ({provider, program, metaplex, meta, 
             handleContentChange("show");
         }
         catch (error){
-            console.log(error);
+            alert(error);
         }
     }
     return(
