@@ -44,7 +44,7 @@ Installation:
  
  Now using http://localhost:5173 link you can interact with your local version of Minterplace website. The last thing you need to do is to connect your Phantom wallet and enjoy NFT minting experience.
 
- Testing smart contract:
+ Testing smart contract (it's not necessary for running UI):
  - Attention: in the test all values and metadata are hardcoded, if you want to provide metadata use UI part.
  - Prerequisites: Anchor (coral-xyz), Solana cli, Local keypair with SOLs in devnet.
  - If you want manually to deploy your version of smart contract and test it, follow next steps:
